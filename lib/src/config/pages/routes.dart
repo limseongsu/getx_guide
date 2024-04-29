@@ -1,15 +1,16 @@
 import 'package:get/get.dart';
-
 import 'exports.dart';
 
 class Routes {
-  static String mainScreenRoute = "/";
-  static String detailScreenRoute = "/detail";
+  static String mainActivityRoute = "/";
+  static String mainDetailRoute = "/main/detail";
+  static String setUpRoute = "/setting/set_up";
 
   static List<GetPage> getPages() {
     return [
-      GetPage(name: mainScreenRoute, page: () => MainScreen()),
-      GetPage(name: detailScreenRoute, page: () => DetailScreen()),
+      GetPage(name: mainActivityRoute, page: () => const MainActivity()),
+      GetPage(name: mainDetailRoute, page: () => DetailScreen()),
+      GetPage(name: setUpRoute, page: () => SetUpScreen()),
     ];
   }
 }
