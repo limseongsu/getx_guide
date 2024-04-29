@@ -19,9 +19,7 @@ class SetUpScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 40),
             InkWell(
-              onTap: () {
-                Get.offNamed(Routes.mainActivityRoute);
-              },
+              onTap: () =>Get.back(),
               child: Container(
                 width: 200,
                 height: 50,

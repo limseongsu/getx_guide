@@ -9,7 +9,7 @@ class Routes {
   static List<GetPage> getPages() {
     return [
       GetPage(name: mainActivityRoute, page: () => const MainActivity()),
-      GetPage(name: mainDetailRoute, page: () => DetailScreen()),
+      GetPage(name: mainDetailRoute, page: () =>  const DetailScreen()),
       GetPage(name: setUpRoute, page: () => SetUpScreen()),
     ];
   }

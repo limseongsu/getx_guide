@@ -33,7 +33,11 @@ class DetailScreen extends StatelessWidget {
             const SizedBox(height: 40),
             InkWell(
               onTap: () {
-                Get.offNamed(Routes.mainActivityRoute);
+                // Get.offUntil(, (route) => false);
+
+                Get.until((route) => Get.currentRoute == Routes.mainActivityRoute);
+
+                // Get.offNamedUntil(Routes.mainActivityRoute, (route) => false,arguments: true);
               },
               child: Container(
                 width: 100,

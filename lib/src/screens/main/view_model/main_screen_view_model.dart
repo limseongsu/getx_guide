@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:getx_guide_app/src/config/pages/routes.dart';
 import 'package:getx_guide_app/src/screens/main/details/detail_screen.dart';
+import 'package:logger/logger.dart';
 
 class MainScreenViewModel extends GetxController {
   //getter lint error
@@ -35,7 +37,7 @@ class MainScreenViewModel extends GetxController {
   Future<void> moveDetailScreen() async {
     if(isChanged.isTrue) {
       /// then => 라우팅 된 페이지가 종료된 시점에 걸어줄 수 있는 이벤트
-      await Get.to(DetailScreen(),arguments: this)?.then((_) => counter.value = 0);
+      await Get.toNamed(Routes.mainDetailRoute,arguments: this, )?.then((value) => counter.value = 0);
     }
   }
 
