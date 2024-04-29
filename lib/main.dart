@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:getx_guide_app/src/config/pages/routes.dart';
+import 'package:getx_guide_app/src/view_model/background_services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,13 +20,15 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         /// config/pages/routes
         getPages: Routes.getPages(),
+        initialBinding: BindingsBuilder(() {
+          Get.put<BackgroundServices>(BackgroundServices());
+        }),
         initialRoute: '/',
         title: '',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-
       ),
     );
   }
